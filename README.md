@@ -23,6 +23,8 @@ ESP32-S2/S3 USB HID 键盘固件：把开发板变成一个**插在主机上的�
 ## 硬件要求
 
 - **ESP32-S2 或 ESP32-S3** 开发板（必须有原生 USB 口），约 ¥15~25
+  - 源码两种都支持，代码零修改
+  - 仓库内预编译固件**只适配 ESP32-S3**（S2 需自行编译，见下方说明）
 - ⚠️ 普通ESP32（无 S2/S3 后缀）没有原生 USB，**模拟不了键盘**
 - USB 数据线插到目标主机（PS5 / PC / Mac）的 USB 口
 
@@ -45,6 +47,10 @@ ESP32-S2/S3 USB HID 键盘固件：把开发板变成一个**插在主机上的�
 | `keyboard_web_for_esp32.v3.5.4MB.merged.bin` | 4MB Flash 合并镜像（含引导程序+分区表） |
 | `keyboard_web_for_esp32.v3.5.8MB.merged.bin` | 8MB Flash 合并镜像（含引导程序+分区表） |
 | `keyboard_web_for_esp32.ino.bin` | 1MB app 镜像（刷 0x10000，不含引导程序） |
+
+> ⚠️ **预编译固件仅适用于 ESP32-S3**（按 `esp32s3` 目标编译，含 S3 专用的引导程序/分区表，刷到 S2 无法启动）。
+> **ESP32-S2 用户请用方式一从源码编译**：开发板选 "ESP32S2 Dev Module"，代码无需任何修改。
+> 普通版 ESP32（无 S2/S3 后缀）无原生 USB，源码编译也不行。
 
 ```bash
 pip install esptool
