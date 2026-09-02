@@ -72,6 +72,10 @@ esptool.py --port /dev/cu.usbmodemXXXX --baud 921600 write-flash 0x0 keyboard_we
 与目标主机同一局域网内，浏览器打开 **http://ps5key.local/**，直接点按即可。
 换 WiFi / 配错了：按住板上 BOOT 键再上电，或访问 `http://ps5key.local/resetwifi`。
 
+### 截图展示
+<img src="./screenshot.png" width="256" />
+
+
 ### HTTP API（GET/POST 通用，已开 CORS）
 
 ```bash
